@@ -1,0 +1,6 @@
+# Binaries
+docker-go-app
+*.exe
+
+# Go vendor
+vendor/
