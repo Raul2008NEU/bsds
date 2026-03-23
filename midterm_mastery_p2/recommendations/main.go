@@ -36,7 +36,7 @@ func recommendHandler(w http.ResponseWriter, r *http.Request) {
 		time.Sleep(5 * time.Second)
 	}
 
-	// 30% chance (or after slow): normal response
+	// 20% chance (or after slow): normal response
 	recs := []Recommendation{
 		{ProductID: 1, ProductName: "Product Alpha 1", Reason: "Popular in your category"},
 		{ProductID: 2, ProductName: "Product Beta 2", Reason: "Customers also bought"},

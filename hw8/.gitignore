@@ -1,0 +1,16 @@
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/*.tfvars
+terraform/.terraform.lock.hcl
+
+# Go
+app/tmp/
+*.exe
+
+# Results (keep the folder, commit the JSONs when ready)
+# results/
+
+# OS
+.DS_Store
