@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  leader:
+    image: kv-node
+    environment:
+      - NODE_ID=leader
+      - ROLE=leader
+      - PEERS=follower1:8080,follower2:8080,follower3:8080,follower4:8080
+      - R=${R:-1}
+      - W=${W:-5}
+      - PORT=8080
+    ports:
+      - "8081:8080"
+    networks:
+      - kvnet
+
+  follower1:
+    image: kv-node
+    environment:
+      - NODE_ID=follower1
+      - ROLE=follower
+      - PEERS=leader:8080
+      - R=${R:-1}
+      - W=${W:-5}
+      - PORT=8080
+    ports:
+      - "8082:8080"
+    networks:
+      - kvnet
+
+  follower2:
+    image: kv-node
+    environment:
+      - NODE_ID=follower2
+      - ROLE=follower
+      - PEERS=leader:8080
+      - R=${R:-1}
+      - W=${W:-5}
+      - PORT=8080
+    ports:
+      - "8083:8080"
+    networks:
+      - kvnet
+
+  follower3:
+    image: kv-node
+    environment:
+      - NODE_ID=follower3
+      - ROLE=follower
+      - PEERS=leader:8080
+      - R=${R:-1}
+      - W=${W:-5}
+      - PORT=8080
+    ports:
+      - "8084:8080"
+    networks:
+      - kvnet
+
+  follower4:
+    image: kv-node
+    environment:
+      - NODE_ID=follower4
+      - ROLE=follower
+      - PEERS=leader:8080
+      - R=${R:-1}
+      - W=${W:-5}
+      - PORT=8080
+    ports:
+      - "8085:8080"
+    networks:
+      - kvnet
+
+networks:
+  kvnet:
+    driver: bridge
